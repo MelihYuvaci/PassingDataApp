@@ -11,14 +11,20 @@ class ClosureViewController: UIViewController {
 
     @IBOutlet weak var textField: UITextField!
     
+    var dataClosure: ((String) -> ())?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        textField.text = ""
+        
     }
     
     
     @IBAction func closureButtonClicked(_ sender: UIButton) {
+        if textField.text != nil {
+            dataClosure?(textField.text!)
+        }
         dismiss(animated: true,completion: nil)
     }
     

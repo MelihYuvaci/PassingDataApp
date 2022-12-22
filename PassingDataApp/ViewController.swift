@@ -32,12 +32,16 @@ class ViewController: UIViewController, protocolViewControllerDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "toProtocolVC" {
             let destinationVC = segue.destination as! ProtocolViewController
             destinationVC.delegate = self
             
         }else if segue.identifier == "toClosureVC"{
             let destinationVC = segue.destination as! ClosureViewController
+            destinationVC.dataClosure = { data in
+                self.textLabel.text = data
+            }
 
             
         }else if segue.identifier == "toNotificationVC"{
