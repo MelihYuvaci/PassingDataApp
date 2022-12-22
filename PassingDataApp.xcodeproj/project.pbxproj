@@ -13,6 +13,9 @@
 		290FC3FB295500880066EE67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 290FC3F9295500880066EE67 /* Main.storyboard */; };
 		290FC3FD2955008A0066EE67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 290FC3FC2955008A0066EE67 /* Assets.xcassets */; };
 		290FC4002955008A0066EE67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 290FC3FE2955008A0066EE67 /* LaunchScreen.storyboard */; };
+		290FC408295503A20066EE67 /* ProtocolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290FC407295503A20066EE67 /* ProtocolViewController.swift */; };
+		290FC40A295503E00066EE67 /* ClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290FC409295503E00066EE67 /* ClosureViewController.swift */; };
+		290FC40C295503F90066EE67 /* NotificationCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290FC40B295503F90066EE67 /* NotificationCenterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		290FC3FC2955008A0066EE67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		290FC3FF2955008A0066EE67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		290FC4012955008A0066EE67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		290FC407295503A20066EE67 /* ProtocolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolViewController.swift; sourceTree = "<group>"; };
+		290FC409295503E00066EE67 /* ClosureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureViewController.swift; sourceTree = "<group>"; };
+		290FC40B295503F90066EE67 /* NotificationCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,9 @@
 				290FC3FC2955008A0066EE67 /* Assets.xcassets */,
 				290FC3FE2955008A0066EE67 /* LaunchScreen.storyboard */,
 				290FC4012955008A0066EE67 /* Info.plist */,
+				290FC407295503A20066EE67 /* ProtocolViewController.swift */,
+				290FC409295503E00066EE67 /* ClosureViewController.swift */,
+				290FC40B295503F90066EE67 /* NotificationCenterViewController.swift */,
 			);
 			path = PassingDataApp;
 			sourceTree = "<group>";
@@ -138,7 +147,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				290FC40C295503F90066EE67 /* NotificationCenterViewController.swift in Sources */,
+				290FC408295503A20066EE67 /* ProtocolViewController.swift in Sources */,
 				290FC3F8295500880066EE67 /* ViewController.swift in Sources */,
+				290FC40A295503E00066EE67 /* ClosureViewController.swift in Sources */,
 				290FC3F4295500880066EE67 /* AppDelegate.swift in Sources */,
 				290FC3F6295500880066EE67 /* SceneDelegate.swift in Sources */,
 			);
