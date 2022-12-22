@@ -7,7 +7,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, protocolViewControllerDelegate {
+   
+    
 
     @IBOutlet weak var textLabel: UILabel!
     
@@ -27,6 +29,25 @@ class ViewController: UIViewController {
    
     @IBAction func notificationButtonClicked(_ sender: UIButton) {
         performSegue(withIdentifier: "toNotificationVC", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toProtocolVC" {
+            let destinationVC = segue.destination as! ProtocolViewController
+            destinationVC.delegate = self
+            
+        }else if segue.identifier == "toClosureVC"{
+            let destinationVC = segue.destination as! ClosureViewController
+
+            
+        }else if segue.identifier == "toNotificationVC"{
+            let destinationVC = segue.destination as! NotificationCenterViewController
+
+        }
+    }
+    
+    func sendData(data: String) {
+        textLabel.text = data
     }
     
 
