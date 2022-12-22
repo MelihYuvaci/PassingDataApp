@@ -15,7 +15,9 @@ class ViewController: UIViewController, protocolViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(didNotificationArrive(data:)), name: .init(rawValue: "notifiyData"), object: nil)
+
     }
 
     @IBAction func protocolButtonClicked(_ sender: UIButton) {
@@ -54,6 +56,9 @@ class ViewController: UIViewController, protocolViewControllerDelegate {
         textLabel.text = data
     }
     
+    @objc func didNotificationArrive(data: Notification){
+        textLabel.text = data.object as? String
+    }
 
 }
 

@@ -14,23 +14,17 @@ class NotificationCenterViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        textField.text = ""
     }
     
 
     @IBAction func notificationButtonClicked(_ sender: UIButton) {
+        
+        if textField.text != nil {
+            NotificationCenter.default.post(name: .init(rawValue: "notifiyData"), object: textField.text!, userInfo: nil)
+        }
+        
         dismiss(animated: true,completion: nil)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
