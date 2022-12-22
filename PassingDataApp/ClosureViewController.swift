@@ -11,6 +11,7 @@ class ClosureViewController: UIViewController {
 
     @IBOutlet weak var textField: UITextField!
     
+    //Define a closure that takes string parameters and returns nothing
     var dataClosure: ((String) -> ())?
     
     override func viewDidLoad() {
@@ -22,20 +23,12 @@ class ClosureViewController: UIViewController {
     
     
     @IBAction func closureButtonClicked(_ sender: UIButton) {
-        if textField.text != nil {
+        if textField.text != "" {
+            //if not empty we add the data
             dataClosure?(textField.text!)
         }
         dismiss(animated: true,completion: nil)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

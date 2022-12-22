@@ -7,6 +7,7 @@
 
 import UIKit
 
+//we define the protocol
 protocol protocolViewControllerDelegate{
     func sendData(data: String)
 }
@@ -15,6 +16,7 @@ class ProtocolViewController: UIViewController {
     
     @IBOutlet weak var textField: UITextField!
     
+    //We define delegate as optional protocol
     var delegate : protocolViewControllerDelegate?
     
     override func viewDidLoad() {
@@ -23,8 +25,8 @@ class ProtocolViewController: UIViewController {
     }
     
     @IBAction func sendProtocolButtonClicked(_ sender: UIButton) {
-        
-        if textField.text != nil {
+        // We add the data if not empty
+        if textField.text != "" {
             self.delegate?.sendData(data: textField.text!)
         }
         dismiss(animated: true,completion: nil)

@@ -7,19 +7,20 @@
 
 import UIKit
 
-class ViewController: UIViewController, protocolViewControllerDelegate {
-   
+class ViewController: UIViewController {
     
-
     @IBOutlet weak var textLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // observers listens and executes the method in the selector if there is a change
         NotificationCenter.default.addObserver(self, selector: #selector(didNotificationArrive(data:)), name: .init(rawValue: "notifiyData"), object: nil)
-
     }
-
+    
+    //MARK: - Perform Segues and Prepare for Segue
+    
+    //transitions are defined according to the clicked button
+    
     @IBAction func protocolButtonClicked(_ sender: UIButton) {
         performSegue(withIdentifier: "toProtocolVC", sender: nil)
     }
@@ -28,7 +29,6 @@ class ViewController: UIViewController, protocolViewControllerDelegate {
         performSegue(withIdentifier: "toClosureVC", sender: nil)
     }
     
-   
     @IBAction func notificationButtonClicked(_ sender: UIButton) {
         performSegue(withIdentifier: "toNotificationVC", sender: nil)
     }
@@ -44,21 +44,24 @@ class ViewController: UIViewController, protocolViewControllerDelegate {
             destinationVC.dataClosure = { data in
                 self.textLabel.text = data
             }
-
-            
-        }else if segue.identifier == "toNotificationVC"{
-            let destinationVC = segue.destination as! NotificationCenterViewController
-
         }
     }
     
+    //MARK: - Notification Center Selector Method
+    
+    @objc func didNotificationArrive(data: Notification){
+        //If there is incoming data, casting is done and changed
+        textLabel.text = data.object as? String
+    }
+    
+}
+
+//MARK: - Protocol ViewController Delegate
+
+// Data comes in with delegate design pattern
+extension ViewController : protocolViewControllerDelegate{
     func sendData(data: String) {
         textLabel.text = data
     }
-    
-    @objc func didNotificationArrive(data: Notification){
-        textLabel.text = data.object as? String
-    }
-
 }
 

@@ -19,11 +19,10 @@ class NotificationCenterViewController: UIViewController{
     
 
     @IBAction func notificationButtonClicked(_ sender: UIButton) {
-        
-        if textField.text != nil {
+        // NotificationCenter posts the value in the textfield if no empty
+        if textField.text != "" {
             NotificationCenter.default.post(name: .init(rawValue: "notifiyData"), object: textField.text!, userInfo: nil)
         }
-        
         dismiss(animated: true,completion: nil)
     }
 
